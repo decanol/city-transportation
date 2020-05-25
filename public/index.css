@@ -1,10 +1,33 @@
 body {
     color: #263238;
+
+    display: flex;
 }
 
-.nav-wrapper {
-    margin: 0 180px;
+.brand-logo {
+    margin: 0 20px;
+}
 
+.nav-head li a{
+    padding: 0 24px;
+    /*display: flex;*/
+    /*flex-direction: row-reverse;*/
+    /*justify-content: space-around;*/
+    /*align-items: flex-start;*/
+}
+
+.nav-head a {
+    width: auto;
+}
+
+.nav-head{
+    height: 100vh;
+    width: auto;
+}
+
+.nav-wrapper ul{
+    display: flex;
+    flex-direction: column;
 }
 
 .thead-table{
@@ -60,7 +83,7 @@ table .btn {
 }
 
 .header-color {
-    background-image: linear-gradient(to right, darkcyan, darkslateblue);
+    background-image: linear-gradient(6deg, darkcyan, darkslateblue);
 }
 
 

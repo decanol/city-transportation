@@ -1,6 +1,9 @@
-<nav class="yellow darken-2 header-color">
+<nav class="yellow darken-2 header-color nav-head">
     <div class="nav-wrapper">
-        <a href="/workers" class="brand-logo ">City Transportation</a>
+        <a href="/workers" class="brand-logo ">City <br> Transportation</a>
+        <br>
+        <br>
+        <br>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
 
             {{#if isWorkers}}
@@ -33,7 +36,7 @@
                 </a></li>
             {{/if}}
 
-            {{#if isWaybills}}
+            {{#if isWays}}
                 <li class="active"><a href="/waybills">Waybills
                     <i class="material-icons right">view_list</i>
                 </a></li>
@@ -42,6 +45,27 @@
                     <i class="material-icons right">view_list</i>
                 </a></li>
             {{/if}}
+
+            {{#if isWays}}
+            <li class="active"><a href="/routs">Routs
+                <i class="material-icons right">rv_hookup</i>
+            </a></li>
+        {{else}}
+            <li><a href="/routs">Routs
+                <i class="material-icons right">rv_hookup</i>
+            </a></li>
+        {{/if}}
+
+            {{#if is}}
+                <li class="active"><a href="/routs">Routs List
+                    <i class="material-icons right">rv_hookup</i>
+                </a></li>
+            {{else}}
+                <li><a href="/routs">Routs List
+                    <i class="material-icons right">rv_hookup</i>
+                </a></li>
+            {{/if}}
+
 
         </ul>
     </div>
