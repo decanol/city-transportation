@@ -1,0 +1,76 @@
+body {
+    color: #263238;
+}
+
+.nav-wrapper {
+    margin: 0 180px;
+
+}
+
+.thead-table{
+    /*background-image: linear-gradient(to right, darkcyan, darkslateblue);*/
+    background-image: linear-gradient(to right, darkslateblue, darkcyan);
+    opacity: 80%;
+    color: white;
+}
+
+.thead-table th {
+    border-radius: 0;
+}
+.thead-table th:first-child {
+    border-radius: 2px 0 0 2px;
+}
+.thead-table th:last-child {
+    border-radius: 0 2px 2px 0
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-content button {
+    margin: 5px 10px;
+}
+
+.dropdown-content li {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.table_menu {
+    float: right;
+}
+
+table .btn {
+    width: 84px;
+}
+
+.inputs {
+    display: flex;
+}
+
+.input-field {
+    margin-right: 40px;
+}
+
+.delete-btn:hover {
+    color: lightcoral;
+}
+
+.header-color {
+    background-image: linear-gradient(to right, darkcyan, darkslateblue);
+}
+
+
+/*tbody tr{*/
+/*    transition: background-color 0.2s;*/
+/*    background-color: white;*/
+/*}*/
+
+/*tbody tr:hover {*/
+/*    !*box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);*!*/
+/*    cursor: pointer;*/
+/*    background-color: #eceff1;*/
+/*}*/

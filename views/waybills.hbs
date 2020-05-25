@@ -1,0 +1,99 @@
+<form action="/waybills/create" method="post">
+    <h3>Create Record</h3>
+    <div class="inputs">
+        <div class="input-field col s12">
+            <select name="tail_number">
+                {{#if tail_number.length}}
+                    {{#each tail_number}}
+                        <option>{{tail_number}}</option>
+                    {{/each}}
+                {{else}}
+                    <option disabled> </option>
+                {{/if}}
+            </select>
+            <label>Tail №</label>
+        </div>
+        <div class="input-field">
+            <input type="number" name="way_number">
+            <label>Way №</label>
+        </div>
+        <div class="input-field">
+            <input type="text" class="datepicker" name="waybills_date">
+            <label>Date</label>
+        </div>
+        <div class="input-field">
+            <input type="number" name="done_trips">
+            <label>Done</label>
+        </div>
+    </div>
+
+    <div class="inputs">
+        <div class="input-field col s12">
+            <select name="drivers">
+                <!--            !!!-->
+                <option value="DriverOne">Driver One</option>
+                <option value="DriverTwo">Driver Two</option>
+                <option value="DriverThree">Driver Three</option>
+            </select>
+            <label>Drivers</label>
+        </div>
+        <div class="input-field col s12">
+            <select name="conductors">
+                <!--            !!!-->
+                <option value="ConductorOne">Conductor One</option>
+                <option value="ConductorTwo">Conductor Two</option>
+                <option value="ConductorThree">Conductor Three</option>
+            </select>
+            <label>Conductors</label>
+        </div>
+    </div>
+    <button type="submit" class="btn waves-effect waves-light">Create
+        <i class="material-icons right">add_box</i>
+    </button>
+</form>
+
+
+<h3>Waybills Table</h3>
+{{#if waybills.length}}
+    <table class="highlight">
+        <thead class="thead-table">
+        <tr>
+            <th>Way №</th>
+            <th>Tail №</th>
+            <th>Date</th>
+            <th>Done</th>
+            <th>Driver</th>
+            <th>Conductor</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each waybills}}
+            <tr>
+                <td>{{way_number}}</td>
+                <td>{{tail_number}}</td>
+                <td>{{waybills_date}}</td>
+                <td>{{done_trips}}</td>
+                <td>{{drivers}}</td>
+                <td>{{conductors}}</td>
+                <td class="table_menu">
+                    <a class='dropdown-trigger btn' href="#" data-target='dropdown{{_id}}'>
+                        <i class="material-icons">menu</i>
+                    </a>
+
+                    <ul id='dropdown{{_id}}' class='dropdown-content'>
+                        <li>
+                            <a href="/waybills/delete/{{_id}}" class="delete-btn">Delete</a>
+                        </li>
+                        <li>
+                            <a href="/edit-waybills/{{_id}}">Edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>*table's empty</p>
+{{/if}}

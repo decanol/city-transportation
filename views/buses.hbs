@@ -1,0 +1,82 @@
+<form action="/buses/create" method="post">
+    <h3>Create Record</h3>
+    <div class="inputs">
+        <div class="input-field">
+            <input type="number" name="tail_number">
+            <label>Tail №</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="gov_number">
+            <label>Government №</label>
+        </div>
+        <div class="input-field">
+            <input type="text" name="brand">
+            <label>Brand</label>
+        </div>
+        <div class="input-field">
+            <input type="text" class="datepicker" name="release_date">
+            <label>Release Date</label>
+        </div>
+    </div>
+
+    <div class="inputs">
+        <div class="input-field">
+            <input type="number" name="mileage">
+            <label>Mileage</label>
+        </div>
+        <div class="input-field">
+            <input type="text" class="datepicker" name="last_repair_date">
+            <label>Last Repair Date</label>
+        </div>
+    </div>
+    <button type="submit" class="btn waves-effect waves-light">Create
+        <i class="material-icons right">add_box</i>
+    </button>
+</form>
+
+
+<h3>Buses Table</h3>
+{{#if buses.length}}
+    <table class="highlight">
+        <thead class="thead-table">
+        <tr>
+            <th>Tail №</th>
+            <th>Government №</th>
+            <th>Brand</th>
+            <th>Release Date</th>
+            <th>Mileage</th>
+            <th>Last Repair Date</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each buses}}
+
+            <tr>
+                <td>{{tail_number}}</td>
+                <td>{{gov_number}}</td>
+                <td>{{brand}}</td>
+                <td>{{release_date}}</td>
+                <td>{{mileage}}</td>
+                <td>{{last_repair_date}}</td>
+                <td class="table_menu">
+                    <a class='dropdown-trigger btn' href="#" data-target='dropdown{{_id}}'>
+                        <i class="material-icons">menu</i>
+                    </a>
+
+                    <ul id='dropdown{{_id}}' class='dropdown-content'>
+                        <li>
+                            <a href="/buses/delete/{{_id}}" class="delete-btn">Delete</a>
+                        </li>
+                        <li>
+                            <a href="/edit-buses/{{_id}}">Edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>*table's empty</p>
+{{/if}}
