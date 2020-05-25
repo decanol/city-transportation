@@ -1,5 +1,6 @@
 const {Router} = require("express");
 const WaybillsSchema = require("../models/WaybillsSchema");
+const WorkersAccSchema = require("../models/WorkersAccSchema");
 const BusesSchema = require("../models/BusesSchema");
 const format = require("date-fns/format");
 const router = Router();
@@ -8,7 +9,9 @@ router.get("/", async (req, res) => {
     const waybillsData = await WaybillsSchema.find({})
         .lean();
 
-    const tail_number = await BusesSchema.find().lean()
+    const tail_number = await BusesSchema.find().lean();
+    const conductors = await WorkersAccSchema.find({post: 'Conductor'}).populate('worker').lean();
+    const drivers = await WorkersAccSchema.find({post: 'Driver'}).populate('worker').lean();
 
     const waybills = waybillsData.map((el) => ({
         ...el,
@@ -19,7 +22,9 @@ router.get("/", async (req, res) => {
         title: "waybills",
         isWaybills: true,
         waybills,
-        tail_number
+        tail_number,
+        conductors,
+        drivers
     })
 });
 

@@ -1,0 +1,89 @@
+<form action="/workersAcc/create" method="post">
+    <h3>Create Record</h3>
+    <div class="inputs">
+        <div class="input-field col s12">
+            <select name="reg_number">
+                {{#if workers.length}}
+                    {{#each workers}}
+                        <option>{{reg_number}}</option>
+                    {{/each}}
+                {{else}}
+                    <option disabled></option>
+                {{/if}}
+            </select>
+            <label>Reg №</label>
+        </div>
+        <div class="input-field">
+            <select name="post">
+                <option value="Driver">Driver</option>
+                <option value="Conductor">Conductor</option>
+            </select>
+            <label>Post</label>
+        </div>
+        <div class="input-field">
+            <input type="text" class="datepicker" name="accept_date">
+            <label>Accept Date</label>
+        </div>
+    </div>
+
+    <div class="inputs">
+        <div class="input-field col s12">
+            <select name="tail_number">
+                {{#if buses.length}}
+                    {{#each buses}}
+                        <option>{{tail_number}}</option>
+                    {{/each}}
+                {{else}}
+                    <option disabled></option>
+                {{/if}}
+            </select>
+            <label>Tail №</label>
+        </div>
+    </div>
+    <button type="submit" class="btn waves-effect waves-light">Create
+        <i class="material-icons right">add_box</i>
+    </button>
+</form>
+
+
+<h3>Workers Acc Table</h3>
+{{#if workersAcc.length}}
+    <table class="highlight">
+        <thead class="thead-table">
+        <tr>
+            <th>Reg. №</th>
+            <th>Post</th>
+            <th>Accept Date</th>
+            <th>Tail №</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each workersAcc}}
+
+            <tr>
+                <td>{{reg_number}}</td>
+                <td>{{post}}</td>
+                <td>{{accept_date}}</td>
+                <td>{{tail_number}}</td>
+                <td class="table_menu">
+                    <a class='dropdown-trigger btn' href="#" data-target='dropdown{{_id}}'>
+                        <i class="material-icons">menu</i>
+                    </a>
+
+                    <ul id='dropdown{{_id}}' class='dropdown-content'>
+                        <li>
+                            <a href="/workersAcc/delete/{{_id}}" class="delete-btn">Delete</a>
+                        </li>
+                        <li>
+                            <a href="/edit-workers-acc/{{_id}}">Edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>*table's empty</p>
+{{/if}}

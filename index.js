@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const exphbs = require("express-handlebars");
 const workersRouts = require("./routs/workers");
+const workersAccRouts = require("./routs/workersAcc");
 const busesRouts = require("./routs/buses");
 const waybillsRouts = require("./routs/waybills");
 const path = require("path");
@@ -22,6 +23,7 @@ app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use('/workers', workersRouts);
+app.use('/workersAcc', workersAccRouts);
 app.use('/buses', busesRouts);
 app.use('/waybills', waybillsRouts);
 

@@ -8,7 +8,7 @@
                         <option>{{tail_number}}</option>
                     {{/each}}
                 {{else}}
-                    <option disabled> </option>
+                    <option disabled></option>
                 {{/if}}
             </select>
             <label>Tail №</label>
@@ -30,19 +30,25 @@
     <div class="inputs">
         <div class="input-field col s12">
             <select name="drivers">
-                <!--            !!!-->
-                <option value="DriverOne">Driver One</option>
-                <option value="DriverTwo">Driver Two</option>
-                <option value="DriverThree">Driver Three</option>
+                {{#if drivers.length}}
+                    {{#each drivers}}
+                        <option>{{reg_number}}</option>
+                    {{/each}}
+                {{else}}
+                    <option disabled></option>
+                {{/if}}
             </select>
             <label>Drivers</label>
         </div>
         <div class="input-field col s12">
             <select name="conductors">
-                <!--            !!!-->
-                <option value="ConductorOne">Conductor One</option>
-                <option value="ConductorTwo">Conductor Two</option>
-                <option value="ConductorThree">Conductor Three</option>
+                {{#if conductors.length}}
+                    {{#each conductors}}
+                        <option>{{reg_number}}</option>
+                    {{/each}}
+                {{else}}
+                    <option disabled></option>
+                {{/if}}
             </select>
             <label>Conductors</label>
         </div>

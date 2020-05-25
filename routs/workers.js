@@ -18,22 +18,9 @@ router.get("/", async (req, res) => {
     })
 });
 
-//------------------------------------------------------------------------don't touch
 
-//edit... a kuda?
-// router.get("/workers", async (req, res) => {
-//     const workersData = await Todo.find({})
-//         .lean();
-//
-//
-//     const workers = workersData.map((el) => ({...el, birthday: format(el.birthday, 'dd.MM.yyyy')}));
-//
-//     res.render("edit-workers", {
-//         title: "Home",
-//         isWorkers: true,
-//         workers
-//     })
-// });
+//edit
+
 
 router.post("/create", async (req, res) => {
     const workers = new WorkersSchema({

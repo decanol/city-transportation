@@ -13,6 +13,16 @@
                 </a></li>
             {{/if}}
 
+            {{#if isWorkersAcc}}
+                <li class="active"><a href="/workersAcc">Workers Acc Data
+                    <i class="material-icons right">assignment_ind</i>
+                </a></li>
+            {{else}}
+                <li><a href="/workersAcc">Workers Acc Data
+                    <i class="material-icons right">assignment_ind</i>
+                </a></li>
+            {{/if}}
+
             {{#if isBuses}}
                 <li class="active"><a href="/buses">Buses
                     <i class="material-icons right">directions_bus</i>
