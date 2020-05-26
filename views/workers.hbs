@@ -28,8 +28,9 @@
             <label>Reg. №</label>
         </div>
         <div class="input-field">
-            <input type="tel" name="phone">
+            <input id="tel" type="tel" name="phone" class="validate" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
             <label>Phone</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
             <input type="text" class="datepicker" name="birthday">
