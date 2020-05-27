@@ -9,36 +9,42 @@
             <label>Gender</label>
         </div>
         <div class="input-field">
-            <input type="text" name="name">
+            <input type="text" name="name" class="validate" pattern="^[A-Z][a-z]+$">
             <label>Name</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" name="surname">
+            <input type="text" name="surname" class="validate" pattern="^[A-Z][a-z]+$">
             <label>Surname</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" name="patronym">
+            <input type="text" name="patronym" class="validate" pattern="^[A-Z][a-z]+$+">
             <label>Patronymic</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
     </div>
 
     <div class="inputs">
         <div class="input-field">
-            <input type="number" name="reg_number">
+            <input type="number" min="1" name="reg_number" class="validate" pattern="^[1-9]+$">
             <label>Reg. №</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input id="tel" type="tel" name="phone" class="validate" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+            <input type="tel" name="phone" class="validate" pattern="[0-9]{3}[0-9]{3}[0-9]{4}">
             <label>Phone</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
             <input type="text" class="datepicker" name="birthday">
             <label>Birthday</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" name="address">
+            <input type="text" name="address" class="validate" pattern="^[A-Z][a-z]+ [1-9]+$">
             <label>Address</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
     </div>
     <button type="submit" class="btn waves-effect waves-light">Create

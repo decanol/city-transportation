@@ -12,6 +12,7 @@
                 {{/if}}
             </select>
             <label>Tail №</label>
+            <span class="helper-text" data-error="" data-success=""></span>
         </div>
         <div class="input-field">
             <input type="number" name="way_number">
@@ -22,8 +23,9 @@
             <label>Date</label>
         </div>
         <div class="input-field">
-            <input type="number" name="done_trips">
+            <input type="number" name="done_trips" class="validate" pattern="^[1-9]+$">
             <label>Done</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
     </div>
 

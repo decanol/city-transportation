@@ -1,7 +1,11 @@
 body {
-    color: #263238;
-
+    color: #38454b;
     display: flex;
+}
+
+.container {
+    margin: 0 0 60px 312px;
+    width: 1066px;
 }
 
 .logo {
@@ -11,38 +15,53 @@ body {
 
 .logo-box {
     display: flex;
+    justify-content: space-around;
     align-items: center;
+
+    padding: 24px;
 }
 
-.logo-box a{
+.logo-box a {
     font-size: 68px;
 }
 
-.brand-logo{
+.logo-box img {
+    margin: 0;
+}
+
+.brand-logo {
     margin: 0 20px;
 }
 
-.nav-head li a{
-    padding: 0 24px;
+.nav-head li a {
+    padding: 0 28px;
 }
 
 .nav-head a {
     width: auto;
 }
 
-.nav-head{
-    height: 100vh;
+.nav-head {
+    height: 100%;
     width: auto;
+
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
-.nav-wrapper ul{
+.nav-wrapper ul {
     display: flex;
     flex-direction: column;
 }
 
-.thead-table{
-    /*background-image: linear-gradient(to right, darkcyan, darkslateblue);*/
-    background-image: linear-gradient(to right, darkslateblue, darkcyan);
+.thead-table {
+    background-image: linear-gradient(96deg, darkslateblue, darkcyan);
+    background-attachment: fixed;
+    background-size: contain;
     opacity: 80%;
     color: white;
 }
@@ -50,9 +69,11 @@ body {
 .thead-table th {
     border-radius: 0;
 }
+
 .thead-table th:first-child {
     border-radius: 2px 0 0 2px;
 }
+
 .thead-table th:last-child {
     border-radius: 0 2px 2px 0
 }
@@ -95,15 +116,3 @@ table .btn {
 .header-color {
     background-image: linear-gradient(6deg, darkcyan, darkslateblue);
 }
-
-
-/*tbody tr{*/
-/*    transition: background-color 0.2s;*/
-/*    background-color: white;*/
-/*}*/
-
-/*tbody tr:hover {*/
-/*    !*box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.2);*!*/
-/*    cursor: pointer;*/
-/*    background-color: #eceff1;*/
-/*}*/

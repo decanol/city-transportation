@@ -2,12 +2,14 @@
     <h3>Create Record</h3>
     <div class="inputs">
         <div class="input-field">
-            <input type="number" name="tail_number">
+            <input type="number" min="0" name="tail_number" class="validate" pattern="^[0-9]{3}$">
             <label>Tail №</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" name="gov_number">
+            <input type="text" name="gov_number" class="validate" pattern="^((KA)|(KI)|(KB)|(KC)|(KE)|(KH)|(KM)|(KO)|(KP)|(KT)|(HA)|(HB)|(HC)|(HE)|(HH)|(HI)|(HK)|(HM)|(HO)|(KX)|(HT)|(HX)|(IA)|(IB)|(IE)|(KK)|(IH)|(AO)|(AT)|(BC)|(BO)|(AC)|(BK)|(BX)|(CE)|(AB)|(AM)|(AA)|(AI)|(CB)|(CA)|(BH)|(BE)|(BA)|(BI)|(BM)|(BT)|(AE)|(AX)|(AK)|(CH)|(AP)|(AH)|(BB))[0-9]{4}((AA)|(BA)|(CA)|(EA)|(HA)|(IA)|(KA)|(MA)|(OA)|(PA)|(TA)|(XA)|(AB)|(BB)|(CB)|(EB)|(HB)|(IB)|(KB)|(MB)|(OB)|(PB)|(TB)|(XB)|(AC)|(BC)|(EC)|(HC)|(IC)|(KC)|(MC)|(OC)|(PC)|(TC)|(XC)|(AE)|(BE)|(CE)|(EE)|(HE)|(IE)|(KE)|(ME)|(OE)|(PE)|(TE)|(XE)|(AH)|(BH)|(CH)|(EH)|(HH)|(IH)|(KH)|(MH)|(OH)|(PH)|(TH)|(XH)|(AI)|(BI)|(CI)|(EI)|(HI)|(II)|(KI)|(MI)|(OI)|(PI)|(TI)|(XI)|(AK)|(BK)|(CK)|(EK)|(HK)|(IK)|(KK)|(KK)|(OK)|(PK)|(TK)|(XK)|(AM)|(BM)|(CM)|(EM)|(HM)|(IM)|(MM)|(OM)|(PM)|(TM)|(XM)|(AO)|(BO)|(CO)|(EO)|(HO)|(IO)|(KO)|(MO)|(OO)|(PO)|(TO)|(XO)|(AP)|(CP)|(EP)|(HP)|(IP)|(KP)|(MP)|(OP)|(PP)|(TP)|(XP)|(AT)|(BT)|(CT)|(ET)|(HT)|(IT)|(KT)|(MT)|(OT)|(PT)|(TT)|(XT))">
             <label>Government №</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
             <input type="text" name="brand">
@@ -21,8 +23,9 @@
 
     <div class="inputs">
         <div class="input-field">
-            <input type="number" name="mileage">
-            <label>Mileage</label>
+            <input type="number" min="0" name="mileage">
+            <label>Mileage (km)</label>
+            <span class="helper-text" data-error="" data-success=""></span>
         </div>
         <div class="input-field">
             <input type="text" class="datepicker" name="last_repair_date">
