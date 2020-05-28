@@ -5,7 +5,8 @@ const workersRouts = require("./routs/workers");
 const workersAccRouts = require("./routs/workersAcc");
 const busesRouts = require("./routs/buses");
 const waybillsRouts = require("./routs/waybills");
-const routsRouts = require("./routs/routs");
+// const routsRouts = require("./routs/routs");
+const routsListRouts = require("./routs/routsList");
 const path = require("path");
 
 const PORT = process.env.PORT || 3000;
@@ -27,7 +28,8 @@ app.use('/workers', workersRouts);
 app.use('/workersAcc', workersAccRouts);
 app.use('/buses', busesRouts);
 app.use('/waybills', waybillsRouts);
-app.use('/routs', routsRouts);
+// app.use('/routs', routsRouts);
+app.use('/routsList', routsListRouts);
 
 async function start() {
     try {

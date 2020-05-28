@@ -1,0 +1,85 @@
+<form action="/routsList/create" method="post">
+    <h3>Create Record</h3>
+    <div class="inputs">
+        <div class="input-field">
+            <input type="number" min="1" name="rout_number" class="validate" pattern="^[0-9]{3}$">
+            <label>Rout №</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field">
+            <input type="text" name="start_station" class="validate" pattern="^[A-Z][a-z]+ [1-9]+$">
+            <label>Start Station</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field">
+            <input type="text" name="finish_station" class="validate" pattern="^[A-Z][a-z]+ [1-9]+$">
+            <label>Finish Station</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+    </div>
+    <h4>Rout</h4>
+    <div class="inputs">
+<!--        <div class="input-field">-->
+<!--            <input type="number" min="0" name="mileage">-->
+<!--            <label>Mileage (km)</label>-->
+<!--            <span class="helper-text" data-error="" data-success=""></span>-->
+<!--        </div>-->
+        <div class="input-field">
+            <div class="chips validate"></div>
+            <!--            <input type="text" name="stations" class="validate" pattern="^[A-Z][a-z]+ [1-9]+$">-->
+<!--            <label>Stations</label>-->
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn waves-effect waves-light" id="submitForm" disabled="disabled">Create
+        <i class="material-icons right">add_box</i>
+    </button>
+</form>
+
+
+<!--<h3>Routs</h3>-->
+<!--{{#if routsList.length}}-->
+<!--    <table class="highlight">-->
+<!--        <thead class="thead-table">-->
+<!--        <tr>-->
+<!--            <th>Rout №</th>-->
+<!--            <th>Start Station №</th>-->
+<!--            <th>Finish Station</th>-->
+<!--            <th>Stations</th>-->
+<!--            <th>Mileage</th>-->
+<!--            <th>Last Repair Date</th>-->
+<!--            <th></th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        {{#each routsList}}-->
+
+<!--            <tr>-->
+<!--                <td>{{tail_number}}</td>-->
+<!--                <td>{{gov_number}}</td>-->
+<!--                <td>{{brand}}</td>-->
+<!--                <td>{{release_date}}</td>-->
+<!--                <td>{{mileage}}</td>-->
+<!--                <td>{{last_repair_date}}</td>-->
+<!--                <td class="table_menu">-->
+<!--                    <a class='dropdown-trigger btn' href="#" data-target='dropdown{{_id}}'>-->
+<!--                        <i class="material-icons">menu</i>-->
+<!--                    </a>-->
+
+<!--                    <ul id='dropdown{{_id}}' class='dropdown-content'>-->
+<!--                        <li>-->
+<!--                            <a href="/buses/delete/{{_id}}" class="delete-btn">Delete</a>-->
+<!--                        </li>-->
+<!--                        <li>-->
+<!--                            <a href="/edit-buses/{{_id}}">Edit</a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </td>-->
+<!--            </tr>-->
+<!--        {{/each}}-->
+<!--        </tbody>-->
+<!--    </table>-->
+<!--{{else}}-->
+<!--    <p>*table's empty</p>-->
+<!--{{/if}}-->

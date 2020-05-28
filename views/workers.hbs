@@ -19,7 +19,7 @@
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" name="patronym" class="validate" pattern="^[A-Z][a-z]+$+">
+            <input type="text" name="patronym" class="validate" pattern="^[A-Z][a-z]+$">
             <label>Patronymic</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
@@ -37,7 +37,7 @@
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" class="datepicker" name="birthday">
+            <input type="text" class="datepicker validate" name="birthday">
             <label>Birthday</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
@@ -47,7 +47,7 @@
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
     </div>
-    <button type="submit" class="btn waves-effect waves-light">Create
+    <button id="submitForm" type="submit" class="btn waves-effect waves-light" disabled="disabled">Create
         <i class="material-icons right">add_box</i>
     </button>
 </form>
@@ -59,7 +59,8 @@
         <thead class="thead-table">
         <tr>
             <th>Reg. №</th>
-            <th>N.S.P.</th>
+<!--            <th>N.S.P.</th>-->
+            <th>Name Surname Patronymic</th>
             <th>Gender</th>
             <th>Address</th>
             <th>Phone</th>

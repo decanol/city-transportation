@@ -15,7 +15,8 @@
             <span class="helper-text" data-error="" data-success=""></span>
         </div>
         <div class="input-field">
-            <input type="number" name="way_number">
+            <input type="number" name="rout_number">
+<!--            list of routs numbers-->
             <label>Rout</label>
         </div>
         <div class="input-field">
@@ -53,9 +54,11 @@
                 {{/if}}
             </select>
             <label>Conductors</label>
+            <span class="helper-text" data-error="" data-success=""></span>
         </div>
+
     </div>
-    <button type="submit" class="btn waves-effect waves-light">Create
+    <button type="submit" class="btn waves-effect waves-light" id="submitForm" disabled="disabled">Create
         <i class="material-icons right">add_box</i>
     </button>
 </form>
@@ -66,7 +69,7 @@
     <table class="highlight">
         <thead class="thead-table">
         <tr>
-            <th>Rout</th>
+            <th>Rout №</th>
             <th>Tail №</th>
             <th>Date</th>
             <th>Done</th>
@@ -78,7 +81,7 @@
         <tbody>
         {{#each waybills}}
             <tr>
-                <td>{{way_number}}</td>
+                <td>{{rout_number}}</td>
                 <td>{{tail_number}}</td>
                 <td>{{waybills_date}}</td>
                 <td>{{done_trips}}</td>

@@ -30,7 +30,7 @@ router.get("/", async (req, res) => {
 
 router.post("/create", async (req, res) => {
     const waybills = new WaybillsSchema({
-        way_number: req.body.way_number,
+        rout_number: req.body.rout_number,
         tail_number: req.body.tail_number,
         waybills_date: req.body.waybills_date,
         done_trips: req.body.done_trips,

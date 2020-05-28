@@ -2,7 +2,7 @@ const {Schema, model} = require("mongoose");
 
 
 const schema = new Schema({
-    way_number: {
+    rout_number: {
         type: Number,
         required: true
     },

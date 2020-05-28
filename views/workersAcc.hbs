@@ -2,7 +2,7 @@
     <h3>Create Record</h3>
     <div class="inputs">
         <div class="input-field col s12">
-            <select name="reg_number">
+            <select name="reg_number" class="validate">
                 {{#if workers.length}}
                     {{#each workers}}
                         <option>{{reg_number}}</option>
@@ -12,26 +12,26 @@
                 {{/if}}
             </select>
             <label>Reg №</label>
-            <span class="helper-text" data-error="" data-success=""></span>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <select name="post">
+            <select name="post" class="validate">
                 <option value="Driver">Driver</option>
                 <option value="Conductor">Conductor</option>
             </select>
             <label>Post</label>
-            <span class="helper-text" data-error="" data-success=""></span>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" class="datepicker" name="accept_date">
+            <input type="text" class="datepicker validate" name="accept_date">
             <label>Accept Date</label>
-            <span class="helper-text" data-error="" data-success=""></span>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
     </div>
 
     <div class="inputs">
         <div class="input-field col s12">
-            <select name="tail_number">
+            <select name="tail_number" class="validate">
                 {{#if buses.length}}
                     {{#each buses}}
                         <option>{{tail_number}}</option>
@@ -41,10 +41,10 @@
                 {{/if}}
             </select>
             <label>Tail №</label>
-            <span class="helper-text" data-error="" data-success=""></span>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
     </div>
-    <button type="submit" class="btn waves-effect waves-light">Create
+    <button type="submit" class="btn waves-effect waves-light" id="submitForm" disabled="disabled">Create
         <i class="material-icons right">add_box</i>
     </button>
 </form>
