@@ -1,15 +1,19 @@
 const {Router} = require("express");
 const RoutsListSchema = require("../models/RoutsListSchema");
+const StationsSchema = require("../models/StationsSchema");
 const router = Router();
 
 router.get("/", async (req, res) => {
     const routsListData = await RoutsListSchema.find({})
         .lean();
 
+    const stations = await StationsSchema.find().lean();
+
     res.render("routsList", {
         title: "routsList",
         isRoutsList: true,
-        routsListData
+        routsListData,
+        stations
     })
 });
 
@@ -19,11 +23,7 @@ router.get("/", async (req, res) => {
 
 router.post("/create", async (req, res) => {
     const routsList = new RoutsListSchema({
-        rout_number: req.body.rout_number,
-        start_station: req.body.start_station,
-        finish_station: req.body.finish_station,
-        station: req.body.station,
-        mileage: req.body.mileage
+        rout_number: req.body.rout_number
     });
 
     await routsList.save();

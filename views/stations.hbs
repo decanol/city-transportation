@@ -1,0 +1,26 @@
+<form action="/stations/create" method="post">
+    <h3>Create Record</h3>
+    <div class="inputs">
+        <div class="input-field">
+            <input type="text" name="stations" class="validate" pattern="^[A-Z][a-z]+ [1-9]+$">
+            <label>Station</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn waves-effect waves-light" id="submitForm" disabled="disabled">Create
+        <i class="material-icons right">add_box</i>
+    </button>
+</form>
+
+
+<h3>Stations</h3>
+{{#if stations.length}}
+    <ul class="collection">
+        {{#each stations}}
+            <li class="collection-item">{{stations}}</li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>*table's empty</p>
+{{/if}}

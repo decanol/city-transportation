@@ -7,6 +7,7 @@ const busesRouts = require("./routs/buses");
 const waybillsRouts = require("./routs/waybills");
 // const routsRouts = require("./routs/routs");
 const routsListRouts = require("./routs/routsList");
+const stationsRouts = require("./routs/stations");
 const path = require("path");
 
 const PORT = process.env.PORT || 3000;
@@ -30,6 +31,7 @@ app.use('/buses', busesRouts);
 app.use('/waybills', waybillsRouts);
 // app.use('/routs', routsRouts);
 app.use('/routsList', routsListRouts);
+app.use('/stations', stationsRouts);
 
 async function start() {
     try {

@@ -6,32 +6,25 @@
             <label>Rout №</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
-        <div class="input-field">
-            <input type="text" name="start_station" class="validate" pattern="^[A-Z][a-z]+ [1-9]+$">
-            <label>Start Station</label>
-            <span class="helper-text" data-error="wrong" data-success="right"></span>
-        </div>
-        <div class="input-field">
-            <input type="text" name="finish_station" class="validate" pattern="^[A-Z][a-z]+ [1-9]+$">
-            <label>Finish Station</label>
-            <span class="helper-text" data-error="wrong" data-success="right"></span>
-        </div>
     </div>
-    <h4>Rout</h4>
     <div class="inputs">
-<!--        <div class="input-field">-->
-<!--            <input type="number" min="0" name="mileage">-->
-<!--            <label>Mileage (km)</label>-->
-<!--            <span class="helper-text" data-error="" data-success=""></span>-->
-<!--        </div>-->
-        <div class="input-field">
-            <div class="chips validate"></div>
-            <!--            <input type="text" name="stations" class="validate" pattern="^[A-Z][a-z]+ [1-9]+$">-->
-<!--            <label>Stations</label>-->
+        <div class="input-field col s12">
+            <select name="stations[]">
+                {{#if stations.length}}
+                    {{#each stations}}
+                        <option>{{stations}}</option>
+                    {{/each}}
+                {{else}}
+                    <option disabled></option>
+                {{/if}}
+            </select>
+            <label>Stations</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
     </div>
-
+    <button type="button" class="btn waves-effect waves-light btn-icon" id="addTitle">
+        <i class="material-icons right">add_circle_outline</i>
+    </button>
     <button type="submit" class="btn waves-effect waves-light" id="submitForm" disabled="disabled">Create
         <i class="material-icons right">add_box</i>
     </button>
