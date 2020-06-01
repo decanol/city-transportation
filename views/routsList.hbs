@@ -1,3 +1,20 @@
+<div class="station-field" id="select-example" hidden>
+    <select class="example" name="stations[]">
+        {{#if stations.length}}
+            {{#each stations}}
+                <option value="{{_id}}">{{stations}}</option>
+            {{/each}}
+        {{else}}
+            <option disabled></option>
+        {{/if}}
+    </select>
+    <label>Stations</label>
+    <span class="helper-text" data-error="wrong" data-success="right"></span>
+    <button class="delete btn waves-effect waves-light btn-icon">
+        <i class="material-icons right">delete</i>
+    </button>
+</div>
+
 <form action="/routsList/create" method="post">
     <h3>Create Record</h3>
     <div class="inputs">
@@ -8,71 +25,61 @@
         </div>
     </div>
     <div class="inputs">
-        <div class="input-field col s12">
-            <select name="stations[]">
-                {{#if stations.length}}
-                    {{#each stations}}
-                        <option>{{stations}}</option>
-                    {{/each}}
-                {{else}}
-                    <option disabled></option>
-                {{/if}}
-            </select>
-            <label>Stations</label>
-            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        <div class="input-field col s12 container1">
+            <div class="station-field">
+                <select name="stations[]">
+                    {{#if stations.length}}
+                        {{#each stations}}
+                            <option value="{{_id}}">{{stations}}</option>
+                        {{/each}}
+                    {{else}}
+                        <option disabled></option>
+                    {{/if}}
+                </select>
+                <label>Stations</label>
+                <span class="helper-text" data-error="wrong" data-success="right"></span>
+            </div>
         </div>
     </div>
-    <button type="button" class="btn waves-effect waves-light btn-icon" id="addTitle">
+    <button type="button" class="btn waves-effect waves-light btn-icon add-input">
         <i class="material-icons right">add_circle_outline</i>
     </button>
+
+
     <button type="submit" class="btn waves-effect waves-light" id="submitForm" disabled="disabled">Create
         <i class="material-icons right">add_box</i>
     </button>
 </form>
 
 
-<!--<h3>Routs</h3>-->
-<!--{{#if routsList.length}}-->
-<!--    <table class="highlight">-->
-<!--        <thead class="thead-table">-->
-<!--        <tr>-->
-<!--            <th>Rout №</th>-->
-<!--            <th>Start Station №</th>-->
-<!--            <th>Finish Station</th>-->
-<!--            <th>Stations</th>-->
-<!--            <th>Mileage</th>-->
-<!--            <th>Last Repair Date</th>-->
-<!--            <th></th>-->
-<!--        </tr>-->
-<!--        </thead>-->
-<!--        <tbody>-->
-<!--        {{#each routsList}}-->
+<h3>Routs List</h3>
 
-<!--            <tr>-->
-<!--                <td>{{tail_number}}</td>-->
-<!--                <td>{{gov_number}}</td>-->
-<!--                <td>{{brand}}</td>-->
-<!--                <td>{{release_date}}</td>-->
-<!--                <td>{{mileage}}</td>-->
-<!--                <td>{{last_repair_date}}</td>-->
-<!--                <td class="table_menu">-->
-<!--                    <a class='dropdown-trigger btn' href="#" data-target='dropdown{{_id}}'>-->
-<!--                        <i class="material-icons">menu</i>-->
-<!--                    </a>-->
+{{#if routsList.length}}
+    <div class="routs-list-container">
+        {{#each routsList}}
 
-<!--                    <ul id='dropdown{{_id}}' class='dropdown-content'>-->
-<!--                        <li>-->
-<!--                            <a href="/buses/delete/{{_id}}" class="delete-btn">Delete</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="/edit-buses/{{_id}}">Edit</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </td>-->
-<!--            </tr>-->
-<!--        {{/each}}-->
-<!--        </tbody>-->
-<!--    </table>-->
-<!--{{else}}-->
-<!--    <p>*table's empty</p>-->
-<!--{{/if}}-->
+                    <div class="card">
+                        <div class="card-content white-text">
+                            <span class="card-title">{{rout_number}}</span>
+
+                                {{#if stations.length}}
+                                <ol>
+                                    {{#each stations}}
+                                        <li>{{stations}}</li>
+                                    {{/each}}
+                                </ol>
+                                {{else}}
+                                    empty
+                                {{/if}}
+                        </div>
+                        <div class="card-action">
+                            <a href="/routsList/delete/{{_id}}" class="delete-btn">Delete</a>
+                            <a href="/edit-routsList/{{_id}}">Edit</a>
+                        </div>
+                    </div>
+
+        {{/each}}
+    </div>
+{{else}}
+    <p>*table's empty</p>
+{{/if}}

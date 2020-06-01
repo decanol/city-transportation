@@ -24,7 +24,7 @@
         });
 
         document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('select');
+            var elems = document.querySelectorAll('select:not(.example)');
             var instances = M.FormSelect.init(elems, {});
         });
 
@@ -52,6 +52,35 @@
                     $('#submitForm').removeAttr('disabled');
                 }
             });
+        });
+
+
+        //add input field to routs list
+        $(document).ready(function() {
+            const max_fields = 30;
+            const wrapper = $(".container1");
+            const add_button = $(".add-input");
+
+            let x = 1;
+            $(add_button).click(function(e) {
+                e.preventDefault();
+                if (x < max_fields) {
+                    x++;
+                    var l = $('.station-field').length;
+                    var div = $('#select-example').clone().removeAttr('hidden').attr('id','station'+l);
+                    $(wrapper).append(div); //add input box
+                    var elems = document.querySelectorAll('#station'+l+' select');
+                    var instances = M.FormSelect.init(elems, {});
+                } else {
+                    alert('You Reached the limits')
+                }
+            });
+
+            $(wrapper).on("click", ".delete", function(e) {
+                e.preventDefault();
+                $(this).parent('div').remove();
+                x--;
+            })
         });
 
     </script>

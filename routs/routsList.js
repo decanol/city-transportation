@@ -4,7 +4,7 @@ const StationsSchema = require("../models/StationsSchema");
 const router = Router();
 
 router.get("/", async (req, res) => {
-    const routsListData = await RoutsListSchema.find({})
+    const routsList = await RoutsListSchema.find({}).populate('stations')
         .lean();
 
     const stations = await StationsSchema.find().lean();
@@ -12,7 +12,7 @@ router.get("/", async (req, res) => {
     res.render("routsList", {
         title: "routsList",
         isRoutsList: true,
-        routsListData,
+        routsList,
         stations
     })
 });
@@ -23,7 +23,8 @@ router.get("/", async (req, res) => {
 
 router.post("/create", async (req, res) => {
     const routsList = new RoutsListSchema({
-        rout_number: req.body.rout_number
+        rout_number: req.body.rout_number,
+        stations: req.body.stations
     });
 
     await routsList.save();

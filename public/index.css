@@ -120,3 +120,60 @@ table .btn {
 .btn-icon {
     width: 50px;
 }
+
+.routs-list-container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    width: 1000px;
+}
+
+
+
+.card {
+    width: 220px;
+    background-image: linear-gradient(66deg, darkcyan, darkslateblue);
+    opacity: 80%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+
+.card .card-title{
+    font-size: 120px;
+    height: 120px;
+    padding: 30px;
+}
+
+.card-content {
+    flex-grow: 1;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+ol {
+    padding-left: 34px;
+    width: 200px;
+    margin-top: 0;
+}
+
+
+.card-action {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-action .delete-btn {
+    padding-left: 14px;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color: darkslateblue;
+}
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating).delete-btn {
+    color: red;
+}
