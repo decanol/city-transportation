@@ -13,6 +13,7 @@ body {
     height: 80px;
 }
 
+
 .logo-box {
     display: flex;
     justify-content: space-around;
@@ -59,10 +60,10 @@ body {
 }
 
 .thead-table {
-    background-image: linear-gradient(96deg, darkslateblue, darkcyan);
+    /*background-image: linear-gradient(96deg, darkslateblue, darkcyan);*/
     background-attachment: fixed;
     background-size: contain;
-    opacity: 80%;
+    /*opacity: 80%;*/
     color: white;
 }
 
@@ -113,8 +114,30 @@ table .btn {
     color: lightcoral;
 }
 
-.header-color {
-    background-image: linear-gradient(6deg, darkcyan, darkslateblue);
+.header-color, .datepicker-date-display, .card, .thead-table{
+    /*background-image: linear-gradient(6deg, darkcyan, darkslateblue);*/
+    /*background-image: linear-gradient(26deg, #ADEFD1FF, #00203FFF);*/
+    background-image: linear-gradient(#37474f, #37474f);
+    /*opacity: 80%;*/
+}
+
+body .btn {
+    background-color: #F2AA4CFF;
+    color: #37474f;
+}
+
+body .btn:hover {
+    background-color: #37474f;
+    color: #F2AA4CFF;
+}
+
+body .btn:focus {
+    background-color: #37474f;
+    color: #F2AA4CFF;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    color: #37474f;
 }
 
 .btn-icon {
@@ -132,8 +155,8 @@ table .btn {
 
 .card {
     width: 220px;
-    background-image: linear-gradient(66deg, darkcyan, darkslateblue);
-    opacity: 80%;
+    /*background-image: linear-gradient(6deg, darkcyan, darkslateblue);*/
+    /*opacity: 80%;*/
     display: flex;
     flex-direction: column;
     margin-left: 30px;
@@ -176,4 +199,26 @@ ol {
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating).delete-btn {
     color: red;
+}
+
+.collection-item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.delete-station {
+    color: #37474f;
+}
+
+.delete-station:hover {
+    color: lightcoral;
+}
+
+.inputs .input-field input[type=text]:focus {
+    border-bottom: 1px solid #37474f;
+    box-shadow: 0 1px 0 0 #37474f;
+}
+
+.inputs .input-field input[type=text]:focus + label {
+    color: #37474f;
 }
