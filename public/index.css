@@ -60,10 +60,8 @@ body {
 }
 
 .thead-table {
-    /*background-image: linear-gradient(96deg, darkslateblue, darkcyan);*/
     background-attachment: fixed;
     background-size: contain;
-    /*opacity: 80%;*/
     color: white;
 }
 
@@ -115,10 +113,7 @@ table .btn {
 }
 
 .header-color, .datepicker-date-display, .card, .thead-table{
-    /*background-image: linear-gradient(6deg, darkcyan, darkslateblue);*/
-    /*background-image: linear-gradient(26deg, #ADEFD1FF, #00203FFF);*/
     background-image: linear-gradient(#37474f, #37474f);
-    /*opacity: 80%;*/
 }
 
 body .btn {
@@ -155,8 +150,6 @@ body .btn:focus {
 
 .card {
     width: 220px;
-    /*background-image: linear-gradient(6deg, darkcyan, darkslateblue);*/
-    /*opacity: 80%;*/
     display: flex;
     flex-direction: column;
     margin-left: 30px;
@@ -220,5 +213,14 @@ ol {
 }
 
 .inputs .input-field input[type=text]:focus + label {
+    color: #37474f;
+}
+
+.inputs .input-field input[type=number]:focus {
+    border-bottom: 1px solid #37474f;
+    box-shadow: 0 1px 0 0 #37474f;
+}
+
+.inputs .input-field input[type=number]:focus + label {
     color: #37474f;
 }

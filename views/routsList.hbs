@@ -23,6 +23,21 @@
             <label>Rout №</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
+        <div class="input-field">
+            <input type="number" min="1" name="rout_mileage" class="validate" pattern="^[0-9]{8}$">
+            <label>Mileage (km)</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field">
+            <input type="number" min="1" name="trip_time" class="validate" pattern="^[0-9]{4}$">
+            <label>Time (min)</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field">
+            <input type="number" min="1" name="planned_trips_number" class="validate" pattern="^[0-9]{3}$">
+            <label>Trips Number</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
     </div>
     <div class="inputs">
         <div class="input-field col s12 container1">
@@ -71,6 +86,16 @@
                                 {{else}}
                                     empty
                                 {{/if}}
+                            <div class="">
+                                <label>Mileage: </label>
+                                <span>{{rout_mileage}}</span>
+                                <label>Time: </label>
+                                <span>{{trip_time}}</span>
+                                <br>
+                                <label>Trips Number: </label>
+                                <span>{{planned_trips_number}}</span>
+                            </div>
+
                         </div>
                         <div class="card-action">
                             <a href="/routsList/delete/{{_id}}" class="delete-btn">Delete</a>

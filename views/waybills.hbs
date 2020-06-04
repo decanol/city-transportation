@@ -15,13 +15,21 @@
             <span class="helper-text" data-error="" data-success=""></span>
         </div>
         <div class="input-field">
-            <input type="number" name="rout_number">
-<!--            list of routs numbers-->
+            <select name="rout_number">
+                {{#if rout_number.length}}
+                    {{#each rout_number}}
+                        <option>{{rout_number}}</option>
+                    {{/each}}
+                {{else}}
+                    <option disabled></option>
+                {{/if}}
+            </select>
             <label>Rout</label>
         </div>
         <div class="input-field">
-            <input type="text" class="datepicker" name="waybills_date">
+            <input type="text" class="datepicker validate" name="waybills_date">
             <label>Date</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
             <input type="number" name="done_trips" class="validate" pattern="^[1-9]+$">

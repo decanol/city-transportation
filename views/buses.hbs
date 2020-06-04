@@ -12,8 +12,9 @@
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" name="brand">
+            <input type="text" name="brand" class="validate" pattern="^[a-zA-Z0-9\s,'-]*$">
             <label>Brand</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
             <input type="text" class="datepicker" name="release_date">

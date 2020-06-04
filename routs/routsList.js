@@ -24,6 +24,9 @@ router.get("/", async (req, res) => {
 router.post("/create", async (req, res) => {
     const routsList = new RoutsListSchema({
         rout_number: req.body.rout_number,
+        rout_mileage: req.body.rout_mileage,
+        trip_time: req.body.trip_time,
+        planned_trips_number: req.body.planned_trips_number,
         stations: req.body.stations
     });
 

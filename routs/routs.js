@@ -1,23 +1,20 @@
 // const {Router} = require("express");
-// const BusesSchema = require("../models/RoutsSchema");
-// const format = require("date-fns/format");
+// const RoutsSchema = require("../models/RoutsSchema");
 // const router = Router();
 //
 // router.get("/", async (req, res) => {
-//     const busesData = await BusesSchema.find({})
+//     const routs = await RoutsSchema.find({})
 //         .lean();
 //
+//     const tail_number = await BusesSchema.find().lean();
+//     const rout_number = await RoutsListSchema.find().lean();
+//     const conductors = await WorkersAccSchema.find({post: 'Conductor'}).populate('worker').lean();
+//     const drivers = await WorkersAccSchema.find({post: 'Driver'}).populate('worker').lean();
 //
-//     const buses = busesData.map((el) => ({
-//         ...el,
-//         release_date: format(el.release_date, 'dd.MM.yyyy'),
-//         last_repair_date: format(el.last_repair_date, 'dd.MM.yyyy')
-//     }));
-//
-//     res.render("buses", {
-//         title: "buses",
+//     res.render("routs", {
+//         title: "routs",
 //         isBuses: true,
-//         buses
+//         routs
 //     })
 // });
 //
@@ -26,26 +23,22 @@
 //
 //
 // router.post("/create", async (req, res) => {
-//     const buses = new BusesSchema({
-//         tail_number: req.body.tail_number,
-//         gov_number: req.body.gov_number,
-//         brand: req.body.brand,
-//         release_date: req.body.release_date,
-//         mileage: req.body.mileage,
-//         last_repair_date: req.body.last_repair_date
+//     const routs = new RoutsSchema({
+//         routs_number: req.body.routs_number,
+//         rout: req.body.rout, //get first & last item from rout
 //     });
 //
-//     await buses.save();
-//     res.redirect("/buses")
+//     await roust.save();
+//     res.redirect("/routs")
 //
 // });
 //
 // router.get("/delete/:id", async (req, res) => {
-//     const buses = await BusesSchema.findById(req.params.id);
+//     const routs = await RoutsSchema.findById(req.params.id);
 //
-//     await buses.delete();
+//     await routs.delete();
 //
-//     res.redirect("/buses");
+//     res.redirect("/routs");
 // });
 //
 // module.exports = router;
