@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee+Hairline&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/index.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -83,6 +84,12 @@
                 $(this).parent('div').remove();
                 x--;
             })
+        });
+
+        //parallax
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.parallax');
+            var instances = M.Parallax.init(elems, {});
         });
 
     </script>

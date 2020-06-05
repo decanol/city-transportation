@@ -19,22 +19,22 @@
     <h3>Create Record</h3>
     <div class="inputs">
         <div class="input-field">
-            <input type="number" min="1" name="rout_number" class="validate" pattern="^[0-9]{3}$">
+            <input type="text" min="1" name="rout_number" class="validate" pattern="^\d{1,3}$">
             <label>Rout №</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="number" min="1" name="rout_mileage" class="validate" pattern="^[0-9]{8}$">
+            <input type="text" min="1" name="rout_mileage" class="validate" pattern="^\d{1,3}$">
             <label>Mileage (km)</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="number" min="1" name="trip_time" class="validate" pattern="^[0-9]{4}$">
+            <input type="text" min="1" name="trip_time" class="validate" pattern="^\d{1,3}$">
             <label>Time (min)</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="number" min="1" name="planned_trips_number" class="validate" pattern="^[0-9]{3}$">
+            <input type="text" inputmode="numeric" name="planned_trips_number" class="validate" pattern="^\d{1,3}$">
             <label>Trips Number</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
@@ -73,35 +73,40 @@
     <div class="routs-list-container">
         {{#each routsList}}
 
-                    <div class="card">
-                        <div class="card-content white-text">
-                            <span class="card-title">{{rout_number}}</span>
+            <div class="card">
+                <div class="card-content white-text">
+                    <span class="card-title">{{rout_number}}</span>
 
-                                {{#if stations.length}}
-                                <ol>
-                                    {{#each stations}}
-                                        <li>{{stations}}</li>
-                                    {{/each}}
-                                </ol>
-                                {{else}}
-                                    empty
-                                {{/if}}
-                            <div class="">
-                                <label>Mileage: </label>
-                                <span>{{rout_mileage}}</span>
-                                <label>Time: </label>
-                                <span>{{trip_time}}</span>
-                                <br>
-                                <label>Trips Number: </label>
-                                <span>{{planned_trips_number}}</span>
-                            </div>
-
+                    {{#if stations.length}}
+                        <ol>
+                            {{#each stations}}
+                                <li>{{stations}}</li>
+                            {{/each}}
+                        </ol>
+                    {{else}}
+                        empty
+                    {{/if}}
+                    <div class="card-rout">
+                        <div class="card-rout-elem">
+                            <label>Mileage: </label>
+                            <span>{{rout_mileage}}km</span>
                         </div>
-                        <div class="card-action">
-                            <a href="/routsList/delete/{{_id}}" class="delete-btn">Delete</a>
-                            <a href="/edit-routsList/{{_id}}">Edit</a>
+                        <div class="card-rout-elem">
+                            <label>Time: </label>
+                            <span>{{trip_time}}min</span>
+                        </div>
+                        <div class="card-rout-elem">
+                            <label>Trips: </label>
+                            <span>{{planned_trips_number}}</span>
                         </div>
                     </div>
+
+                </div>
+                <div class="card-action">
+                    <a href="/routsList/delete/{{_id}}" class="delete-btn">Delete</a>
+                    <a href="/edit-routsList/{{_id}}">Edit</a>
+                </div>
+            </div>
 
         {{/each}}
     </div>

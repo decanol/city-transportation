@@ -17,6 +17,7 @@ const hbs = exphbs.create({
     defaultLayout: "main",
     extname: "hbs"
 });
+app.get('/', (req, res) => res.render('dashboard.hbs',  {layout: 'dashboard'}));
 
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");

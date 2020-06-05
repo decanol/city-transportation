@@ -1,5 +1,5 @@
 body {
-    color: #38454b;
+    color: #37474f;
     display: flex;
 }
 
@@ -109,7 +109,7 @@ table .btn {
 }
 
 .delete-btn:hover {
-    color: lightcoral;
+    color: red;
 }
 
 .header-color, .datepicker-date-display, .card, .thead-table{
@@ -187,7 +187,7 @@ ol {
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
-    color: darkslateblue;
+    color: #37474f;
 }
 
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating).delete-btn {
@@ -204,7 +204,7 @@ ol {
 }
 
 .delete-station:hover {
-    color: lightcoral;
+    color: red;
 }
 
 .inputs .input-field input[type=text]:focus {
@@ -223,4 +223,91 @@ ol {
 
 .inputs .input-field input[type=number]:focus + label {
     color: #37474f;
+}
+
+nav ul li.active {
+    background-color: rgba(0,0,0,0.2);
+}
+
+.card-rout {
+    display: flex;
+}
+
+.card-rout-elem {
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+    align-items: center;
+}
+
+h3 {
+    font-family: 'Bungee Hairline', cursive;
+    font-weight: bold;
+    font-size: 46px;
+}
+
+/*dashboard*/
+
+.body-container{
+    background-image: url("img/buscicty.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    /*align-items: center;*/
+}
+
+.dashboard-container h1{
+    font-family: 'Bungee Hairline', cursive;
+    font-weight: bold;
+    font-size: 74px;
+    text-align: center;
+}
+
+.dashboard-container {
+    padding: 0 220px;
+    width: 100vw;
+    height: 34vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+
+    background-color: white;
+}
+
+.menu-dashboard {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.menu-dashboard ul {
+    display: flex;
+}
+.menu-dashboard li {
+    margin: 0 18px 6px 18px;
+}
+
+.content-dashboard {
+    background-color: rgba(0,0,0,0.6);
+    height: 100%;
+    width: 100%;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.news-box {
+    background-color: rgba(255,255,255,0.8);
+    width: 920px;
+    padding: 12px 40px 0 40px;
+    margin: 20px;
+}
+
+.news-box ul li {
+    background-color: white;
+    padding: 2px 10px 6px 10px;
 }
