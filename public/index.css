@@ -24,6 +24,8 @@ body {
 
 .logo-box a {
     font-size: 68px;
+    font-family: 'Bungee Hairline', cursive;
+    font-weight: bold;
 }
 
 .logo-box img {
@@ -216,7 +218,16 @@ ol {
     color: #37474f;
 }
 
+.inputs .input-field input[type=tel]:focus + label {
+    color: #37474f;
+}
+
 .inputs .input-field input[type=number]:focus {
+    border-bottom: 1px solid #37474f;
+    box-shadow: 0 1px 0 0 #37474f;
+}
+
+.inputs .input-field input[type=tel]:focus {
     border-bottom: 1px solid #37474f;
     box-shadow: 0 1px 0 0 #37474f;
 }
@@ -249,10 +260,11 @@ h3 {
 /*dashboard*/
 
 .body-container{
-    background-image: url("img/buscicty.jpg");
+    background-image: url("img/abs-back.jpeg");
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    /*height: 100vh;*/
+    min-height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -267,7 +279,7 @@ h3 {
 }
 
 .dashboard-container {
-    padding: 0 220px;
+    /*padding: 0 200px;*/
     width: 100vw;
     height: 34vh;
     display: flex;
@@ -310,4 +322,8 @@ h3 {
 .news-box ul li {
     background-color: white;
     padding: 2px 10px 6px 10px;
+}
+
+.dashboard-container img {
+    color: #37474f;
 }
