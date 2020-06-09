@@ -1,15 +1,15 @@
 const {Router} = require("express");
-const NewsSchema = require("../models/NewsSchema");
+const VacancySchema = require("../models/VacancySchema");
 const router = Router();
 
 router.get("/", async (req, res) => {
-    const news = await NewsSchema.find({})
+    const vacancy = await VacancySchema.find({})
         .lean();
 
-    res.render("newsList", {
+    res.render("vacancyList", {
         layout: 'dashboard',
-        title: "newsList",
-        news
+        title: "Vacancy List",
+        vacancy
     })
 });
 

@@ -5,9 +5,14 @@ const workersRouts = require("./routs/workers");
 const workersAccRouts = require("./routs/workersAcc");
 const busesRouts = require("./routs/buses");
 const waybillsRouts = require("./routs/waybills");
-// const routsRouts = require("./routs/routs");
 const routsListRouts = require("./routs/routsList");
 const stationsRouts = require("./routs/stations");
+const newsRouts = require("./routs/news");
+const newsListRouts = require("./routs/newsList");
+const vacancyRouts = require("./routs/vacancy");
+const vacancyListRouts = require("./routs/vacancyList");
+const aboutRouts = require("./routs/about");
+const aboutListRouts = require("./routs/aboutList");
 const path = require("path");
 
 const PORT = process.env.PORT || 3000;
@@ -17,7 +22,9 @@ const hbs = exphbs.create({
     defaultLayout: "main",
     extname: "hbs"
 });
-app.get('/', (req, res) => res.render('dashboard.hbs',  {layout: 'dashboard'}));
+app.get('/', (req, res) => res.render('dashboard.hbs', {
+    layout: 'dashboard'
+}));
 
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
@@ -30,9 +37,14 @@ app.use('/workers', workersRouts);
 app.use('/workersAcc', workersAccRouts);
 app.use('/buses', busesRouts);
 app.use('/waybills', waybillsRouts);
-// app.use('/routs', routsRouts);
 app.use('/routsList', routsListRouts);
 app.use('/stations', stationsRouts);
+app.use('/news', newsRouts);
+app.use('/newsList', newsListRouts);
+app.use('/vacancy', vacancyRouts);
+app.use('/vacancyList', vacancyListRouts);
+app.use('/about', aboutRouts);
+app.use('/aboutList', aboutListRouts);
 
 async function start() {
     try {

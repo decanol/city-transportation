@@ -66,6 +66,36 @@
                 </a></li>
             {{/if}}
 
+            {{#if isNews}}
+                <li class="active"><a href="/news">News
+                    <i class="material-icons right">view_day</i>
+                </a></li>
+            {{else}}
+                <li><a href="/news">News
+                    <i class="material-icons right">view_day</i>
+                </a></li>
+            {{/if}}
+
+            {{#if isVacancy}}
+                <li class="active"><a href="/vacancy">Vacancies
+                    <i class="material-icons right">assignment</i>
+                </a></li>
+            {{else}}
+                <li><a href="/vacancy">Vacancies
+                    <i class="material-icons right">assignment</i>
+                </a></li>
+            {{/if}}
+
+            {{#if isAbout}}
+                <li class="active"><a href="/about">About
+                    <i class="material-icons right">info</i>
+                </a></li>
+            {{else}}
+                <li><a href="/about">About
+                    <i class="material-icons right">info</i>
+                </a></li>
+            {{/if}}
+
 
         </ul>
     </div>

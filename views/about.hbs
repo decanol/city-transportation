@@ -1,8 +1,8 @@
-<form action="/news/create" method="post">
+<form action="/about/create" method="post">
     <h3>Create Record</h3>
     <div class="inputs">
         <div class="input-field">
-            <input type="text" name="title_news" class="validate" pattern="^[A-z]{1-3}$">
+            <input type="text" name="title_about" class="validate" pattern="^[A-z]{1-3}$">
             <label>Title</label>
             <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
@@ -10,9 +10,9 @@
 
     <div class="inputs">
         <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea" name="content_news"></textarea>
-            <label for="textarea1">Content</label>
-            <span class="helper-text" data-error="" data-success=""></span>
+            <textarea id="textarea1" class="materialize-textarea" name="content_about"></textarea>
+            <label for="textarea1">Requirements</label>
+            <span class="helper-text" data-error="" data-success="right"></span>
         </div>
     </div>
     <button type="submit" class="btn waves-effect waves-light" id="submitForm" disabled="disabled">Create
@@ -20,21 +20,21 @@
     </button>
 </form>
 
-<h3>News List</h3>
+<h3>About</h3>
 
-{{#if news.length}}
+{{#if about.length}}
     <div class="news-list-adm">
     <ul>
-        {{#each news}}
+        {{#each about}}
                 <li>
                     <h5>
-                        {{title_news}}
+                        {{title_about}}
                     </h5>
                     <p>
-                        {{content_news}}
+                        {{content_about}}
                     </p>
-                    <a href="/news/delete/{{_id}}" class="btn waves-effect waves-light delete-btn">Delete</a>
-                    <a href="/edit-news/{{_id}}" class="btn waves-effect waves-light delete-btn">Edit</a>
+                    <a href="/about/delete/{{_id}}" class="btn waves-effect waves-light delete-btn">Delete</a>
+                    <a href="/edit-about/{{_id}}" class="btn waves-effect waves-light delete-btn">Edit</a>
                 </li>
         {{/each}}
     </ul>

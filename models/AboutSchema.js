@@ -2,15 +2,15 @@ const {Schema, model} = require("mongoose");
 
 
 const schema = new Schema({
-    title_news: {
+    title_about: {
         type: String,
         required: true
     },
-    content_news: {
+    content_about: {
         type: String,
         required: true
     }
 
 });
 
-module.exports = model("NewsSchema", schema);
+module.exports = model("AboutSchema", schema);

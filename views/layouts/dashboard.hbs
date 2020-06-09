@@ -1,6 +1,36 @@
 {{> head }}
 
 <body>
-    {{{ body }}}
+<div class="body-container">
+    <div class="dashboard-container">
+        <h1>City Transportation</h1>
+        {{> menu_dashboard }}
+    </div>
+
+    <div class="content-dashboard">
+        <div class="content-box">
+            {{{ body }}}
+        </div>
+    </div>
+    <footer>
+        <div class="contacts">
+            <ul>
+                <li>
+                    <i class="material-icons">phone</i>
+                    <a href="tel:+380660301184">+380660301184</a>
+                </li>
+                <li>
+                    <i class="material-icons">contact_mail</i>
+                    <a href="mailto:citytransportation@gmail.com">citytransportation@gmail.com</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</div>
 </body>
 </html>
+
+
+
+
+

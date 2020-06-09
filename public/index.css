@@ -259,6 +259,10 @@ h3 {
 
 /*dashboard*/
 
+.content-box h3 {
+    padding: 0 16px;
+}
+
 .body-container{
     background-image: url("img/abs-back.jpeg");
     background-size: cover;
@@ -281,7 +285,7 @@ h3 {
 .dashboard-container {
     /*padding: 0 200px;*/
     width: 100vw;
-    height: 34vh;
+    /*height: 24vh;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -312,18 +316,18 @@ h3 {
     justify-content: center;
 }
 
-.news-box {
+.content-box {
     background-color: rgba(255,255,255,0.8);
     width: 920px;
     padding: 12px 40px 0 40px;
     margin: 20px;
 }
 
-.news-box ul li a {
+.content-box ul li a {
     float: right;
 }
 
-.news-box ul li {
+.content-box ul li {
     background-color: white;
     padding: 2px 10px 6px 10px;
     /*height: 190px;*/
@@ -331,4 +335,82 @@ h3 {
 
 .dashboard-container img {
     color: #37474f;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #37474f;
+    box-shadow: 0 1px 0 0 #37474f;
+}
+
+textarea.materialize-textarea:not([readonly]){
+    width: 600px;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) + label {
+    color: #37474f;
+}
+
+.news-list-adm a{
+    margin-right: 20px;
+}
+
+.news-list-adm a:nth-last-child(2):hover {
+    background-color: red;
+}
+
+.content-box li {
+    margin-bottom: 10px;
+}
+
+.content-apply-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.content-apply-btn p {
+    width: 620px;
+}
+
+.content-apply-btn a {
+    height: 60px;
+    display: flex;
+    align-items: center;
+}
+
+.modal-form {
+    padding: 0 40px;
+}
+
+
+/*.menu-dashboard a {*/
+/*    color: #37474f;*/
+/*    padding: 8px 18px;*/
+/*    background-color: #F2AA4CFF;*/
+/*    border-radius: 1px;*/
+/*}*/
+
+footer {
+    height: 16vh;
+    width: 100%;
+    background-color: #37474f;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .contacts li {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+footer .contacts li a {
+    margin: 0 10px;
+}
+
+footer .contacts ul {
+    display: flex;
 }

@@ -1,0 +1,19 @@
+{{#if about.length}}
+    <ul>
+        {{#each about}}
+                <li>
+                    <h3>
+                        {{title_about}}
+                    </h3>
+                    <div class="content-apply-btn">
+                        <p>
+                            {{content_about}}
+                        </p>
+                        <!-- Modal Trigger -->
+                    </div>
+                </li>
+        {{/each}}
+    </ul>
+{{else}}
+    <p>Something is coming</p>
+{{/if}}
