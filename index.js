@@ -13,6 +13,8 @@ const vacancyRouts = require("./routs/vacancy");
 const vacancyListRouts = require("./routs/vacancyList");
 const aboutRouts = require("./routs/about");
 const aboutListRouts = require("./routs/aboutList");
+const userRouts = require("./routs/user");
+const registrationRouts = require("./routs/registration");
 const path = require("path");
 
 const PORT = process.env.PORT || 3000;
@@ -45,6 +47,8 @@ app.use('/vacancy', vacancyRouts);
 app.use('/vacancyList', vacancyListRouts);
 app.use('/about', aboutRouts);
 app.use('/aboutList', aboutListRouts);
+app.use ('/user', userRouts);
+app.use ('/registration', registrationRouts);
 
 async function start() {
     try {

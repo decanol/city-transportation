@@ -1,0 +1,26 @@
+<ul>
+    <li>
+        <form action="/registration/create" method="post" class="form-reg">
+            <h3>Registration</h3>
+            <div class="inputs">
+                <div class="input-field">
+                    <input type="text" name="login" class="validate" pattern="^[a-zA-Z\-]{4,}$">
+                    <label>Login</label>
+                    <span class="helper-text" data-error="A-z, 4+ characters" data-success="right"></span>
+                </div>
+            </div>
+
+            <div class="inputs">
+                <div class="input-field">
+                    <input type="password" name="password" class="validate" pattern="^(?=.*\d)(?=.*[a-z])[0-9a-zA-Z]{8,}$">
+                    <label>Password</label>
+                    <span class="helper-text" data-error="A-z, 0-9, 8+ characters" data-success="right"></span>
+                </div>
+            </div>
+            <button type="submit" class="btn waves-effect waves-light" id="submitForm" disabled="disabled">Create
+                <i class="material-icons right">add_box</i>
+            </button>
+        </form>
+    </li>
+</ul>
+

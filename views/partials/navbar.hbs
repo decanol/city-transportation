@@ -2,9 +2,9 @@
     <div class="nav-wrapper nav-menu">
         <div class="logo-box">
             <img src="/svg/bus.svg" alt="Bus logo" class="logo">
-            <a>CT</a>
+            <a href="/news">CT</a>
         </div>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <ul id="nav-mobile" class="right hide-on-med-and-down nav-menu">
 
             {{#if isWorkers}}
                 <li class="active"><a href="/workers">Workers Personal Data
@@ -93,6 +93,16 @@
             {{else}}
                 <li><a href="/about">About
                     <i class="material-icons right">info</i>
+                </a></li>
+            {{/if}}
+
+            {{#if isUser}}
+                <li class="active"><a href="/user">Users
+                    <i class="material-icons right">group</i>
+                </a></li>
+            {{else}}
+                <li><a href="/user">Users
+                    <i class="material-icons right">group</i>
                 </a></li>
             {{/if}}
 

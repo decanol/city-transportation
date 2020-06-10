@@ -232,7 +232,16 @@ ol {
     box-shadow: 0 1px 0 0 #37474f;
 }
 
+.inputs .input-field input[type=password]:focus {
+    border-bottom: 1px solid #37474f;
+    box-shadow: 0 1px 0 0 #37474f;
+}
+
 .inputs .input-field input[type=number]:focus + label {
+    color: #37474f;
+}
+
+.inputs .input-field input[type=password]:focus + label {
     color: #37474f;
 }
 
@@ -409,8 +418,26 @@ footer .contacts li {
 
 footer .contacts li a {
     margin: 0 10px;
+    color: #F2AA4CFF;
 }
 
 footer .contacts ul {
     display: flex;
+}
+
+.content-about {
+    padding: 0 20px;
+}
+
+.content-box .inputs {
+    margin: 0 20px;
+}
+
+.content-box button {
+    margin: 0 20px 10px 20px;
+    float: right;
+}
+
+.form-reg {
+    height: 320px;
 }
