@@ -16,11 +16,17 @@ const aboutListRouts = require("./routs/aboutList");
 const userRouts = require("./routs/user");
 const registrationRouts = require("./routs/registration");
 const vacancyReplyRouts = require("./routs/vacancyReply");
+const loginRouts = require('./routs/login.js');
+const logoutRouts = require('./routs/logout.js');
 const path = require("path");
+const cookieParser = require('cookie-parser');
+const UserSession = require('./models/UserSessionSchema.js');
+
 
 const PORT = process.env.PORT || 3000;
 
 const app = express();
+app.use(cookieParser());
 const hbs = exphbs.create({
     defaultLayout: "main",
     extname: "hbs",
@@ -32,9 +38,6 @@ const hbs = exphbs.create({
         }
     }
 });
-app.get('/', (req, res) => res.render('dashboard.hbs', {
-    layout: 'dashboard'
-}));
 
 app.engine("hbs", hbs.engine);
 app.set("view engine", "hbs");
@@ -43,20 +46,35 @@ app.set("views", "views");
 app.use(express.urlencoded({extended: true}));
 app.use(express.static(path.join(__dirname, "public")));
 
+app.get('/', (req, res) => res.render('dashboard.hbs', {
+    layout: 'dashboard'
+}));
+app.use ('/registration', registrationRouts);
+app.use ('/login', loginRouts);
+app.use ('/logout', logoutRouts);
+app.use('/routsList', routsListRouts);
+app.use('/newsList', newsListRouts);
+app.use('/vacancyList', vacancyListRouts);
+app.use(async function (req, res, next) {
+    const session = req.cookies.session;
+    const sessions = await UserSession.find({session});
+    if(sessions.length > 0) {
+        next();
+    } else {
+        res.redirect('/login');
+    }
+});
+
 app.use('/workers', workersRouts);
 app.use('/workersAcc', workersAccRouts);
 app.use('/buses', busesRouts);
 app.use('/waybills', waybillsRouts);
-app.use('/routsList', routsListRouts);
 app.use('/stations', stationsRouts);
 app.use('/news', newsRouts);
-app.use('/newsList', newsListRouts);
 app.use('/vacancy', vacancyRouts);
-app.use('/vacancyList', vacancyListRouts);
 app.use('/about', aboutRouts);
 app.use('/aboutList', aboutListRouts);
 app.use ('/user', userRouts);
-app.use ('/registration', registrationRouts);
 app.use ('/vacancyReply', vacancyReplyRouts);
 
 async function start() {

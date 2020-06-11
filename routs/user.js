@@ -1,4 +1,5 @@
 const {Router} = require("express");
+const crypto = require('crypto');
 const UserSchema = require("../models/UserSchema");
 const router = Router();
 
@@ -17,7 +18,7 @@ router.get("/", async (req, res) => {
 router.post("/create", async (req, res) => {
     const user = new UserSchema({
         login: req.body.login,
-        password: req.body.password
+        password: crypto.createHash('md5').update(req.body.password).digest('hex')
     });
 
     await user.save();

@@ -1,0 +1,60 @@
+<form action="/workersAcc/edit/{{id}}" method="post">
+    <h3>Update Record</h3>
+
+    <div class="inputs">
+        <div class="input-field col s12">
+            {{#select workerAcc.reg_number}}
+                <select name="reg_number" class="validate">
+                    {{#if workers.length}}
+                        {{#each workers}}
+                            <option>{{reg_number}}</option>
+                        {{/each}}
+                    {{else}}
+                        <option disabled></option>
+                    {{/if}}
+                </select>
+            {{/select}}
+            <label>Reg №</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field">
+            {{#select workerAcc.post}}
+                <select name="post" class="validate">
+                    <option value="Driver">Driver</option>
+                    <option value="Conductor">Conductor</option>
+                </select>
+            {{/select}}
+            <label>Post</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+        <div class="input-field">
+            <input type="text" class="datepicker validate" value="{{workerAcc.accept_date}}" name="accept_date"
+                   pattern="^[A-z]{3} [0-9]{2}, [0-9]{4}$">
+            <label>Accept Date</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+    </div>
+
+    <div class="inputs">
+        <div class="input-field">
+            {{#select workerAcc.tail_number}}
+                <select name="tail_number" class="validate">
+                    {{#if buses.length}}
+                        {{#each buses}}
+                            <option>{{tail_number}}</option>
+                        {{/each}}
+                    {{else}}
+                        <option disabled></option>
+                    {{/if}}
+                </select>
+            {{/select}}
+            <label>Tail №</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn waves-effect waves-light">Update
+        <i class="material-icons right">update</i>
+    </button>
+</form>

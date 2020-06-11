@@ -1,0 +1,23 @@
+<form action="/news/edit/{{id}}" method="post">
+    <h3>Create Record</h3>
+    <div class="inputs">
+        <div class="input-field">
+            <input type="text" name="title_news" value="{{news.title_news}}" class="validate" pattern="^[A-z]{1-3}$">
+            <label>Title</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+    </div>
+
+    <div class="inputs">
+        <div class="input-field col s12">
+            <textarea id="textarea1" class="materialize-textarea" name="content_news" value="{{news.content_news}}"></textarea>
+            <label for="textarea1">Content</label>
+            <span class="helper-text" data-error="" data-success=""></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn waves-effect waves-light">Update
+        <i class="material-icons right">update</i>
+    </button>
+</form>
+

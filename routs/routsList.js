@@ -17,10 +17,6 @@ router.get("/", async (req, res) => {
     })
 });
 
-
-//edit
-
-
 router.post("/create", async (req, res) => {
     const routsList = new RoutsListSchema({
         rout_number: req.body.rout_number,
@@ -41,6 +37,41 @@ router.get("/delete/:id", async (req, res) => {
     await routsList.delete();
 
     res.redirect("/routsList");
+});
+
+module.exports = router;
+
+
+//---------Edit
+
+router.get("/edit/:id", async (req, res) => {
+    const workerAcc = await WorkersAccSchema.findById(req.params.id).lean();
+    workerAcc.accept_date = format(workerAcc.accept_date, 'dd.MM.yyyy');
+
+    const buses = await BusesSchema.find().lean();
+    const workers = await WorkersSchema.find().lean();
+
+    res.render("edit-workers-acc", {
+        title: "workersAcc",
+        isWorkersAcc: true,
+        buses,
+        workers,
+        workerAcc,
+        id: workerAcc._id
+    })
+});
+
+router.post("/edit/:id", async (req, res) => {
+    const workerAcc = await WorkersAccSchema.findById(req.params.id);
+    await workerAcc.update({
+        reg_number: req.body.reg_number,
+        post: req.body.post,
+        accept_date: req.body.accept_date,
+        tail_number: req.body.tail_number
+    });
+    await workerAcc.save();
+
+    res.redirect("/workersAcc")
 });
 
 module.exports = router;

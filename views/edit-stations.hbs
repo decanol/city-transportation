@@ -1,0 +1,18 @@
+<form action="/stations/edit/{{id}}" method="post">
+    <h3>Update Record</h3>
+
+    <div class="inputs">
+        <div class="input-field">
+            <input type="text" name="stations" value="{{stations.stations}}" class="validate"
+                   pattern="^[a-zA-Z0-9\s,'-]*$">
+            <label>Station</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
+        </div>
+    </div>
+
+    <button type="submit" class="btn waves-effect waves-light">Update
+        <i class="material-icons right">update</i>
+    </button>
+</form>
+
+
