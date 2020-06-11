@@ -18,10 +18,6 @@ router.get("/", async (req, res) => {
     })
 });
 
-
-//edit
-
-
 router.post("/create", async (req, res) => {
     const workers = new WorkersSchema({
         gender: req.body.gender,
@@ -43,6 +39,35 @@ router.get("/delete/:id", async (req, res) => {
     await workers.delete();
 
     res.redirect("/workers");
+});
+
+//---------Edit
+
+router.get("/edit/:id", async (req, res) => {
+    const worker = await WorkersSchema.findById(req.params.id).lean();
+    worker.birthday = format(worker.birthday, 'dd.MM.yyyy');
+
+    res.render("edit-workers", {
+        title: "workers",
+        isWorkers: true,
+        worker,
+        id: worker._id
+    })
+});
+
+router.post("/edit/:id", async (req, res) => {
+    const worker = await WorkersSchema.findById(req.params.id);
+    await worker.update({
+        gender: req.body.gender,
+        name: req.body.name,
+        reg_number: req.body.reg_number,
+        phone: req.body.phone,
+        birthday: req.body.birthday,
+        address: req.body.address
+    });
+    await worker.save();
+
+    res.redirect("/workers")
 });
 
 module.exports = router;

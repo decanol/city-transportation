@@ -25,8 +25,12 @@
 {{#if user.length}}
     <ul class="collection">
         {{#each user}}
-            <li class="collection-item">{{login}}
-                <a href="/user/delete/{{_id}}" class="delete-btn"><i class="material-icons delete-station">delete</i></a>
+            <li class="collection-item">
+                {{login}}
+                <div class="btns">
+                    <a class="edit-btn"><i class="material-icons delete-station">edit</i></a>
+                    <a href="/user/delete/{{_id}}" class="delete-btn"><i class="material-icons delete-station">delete</i></a>
+                </div>
             </li>
         {{/each}}
     </ul>

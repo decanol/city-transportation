@@ -2,7 +2,7 @@
     <div class="nav-wrapper nav-menu">
         <div class="logo-box">
             <img src="/svg/bus.svg" alt="Bus logo" class="logo">
-            <a href="/news">CT</a>
+            <a href="/newsList">CT</a>
         </div>
         <ul id="nav-mobile" class="right hide-on-med-and-down nav-menu">
 
@@ -106,6 +106,15 @@
                 </a></li>
             {{/if}}
 
+            {{#if isVacancyReply}}
+                <li class="active"><a href="/vacancyReply">Job Applications
+                    <i class="material-icons right">insert_drive_file</i>
+                </a></li>
+            {{else}}
+                <li><a href="/vacancyReply">Job Applications
+                    <i class="material-icons right">insert_drive_file</i>
+                </a></li>
+            {{/if}}
 
         </ul>
     </div>

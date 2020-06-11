@@ -1,49 +1,48 @@
-<form action="/edit" method="post">
-    <h3>Create Record</h3>
+<form action="/workers/edit/{{id}}" method="post">
+    <h3>Update Record</h3>
 
     <div class="inputs">
         <div class="input-field col s12">
+            {{#select worker.gender}}
             <select name="gender">
                 <option value="Man">Man</option>
                 <option value="Woman">Woman</option>
             </select>
+            {{/select}}
             <label>Gender</label>
         </div>
         <div class="input-field">
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{worker.name}}">
             <label>Name</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" name="surname">
-            <label>Surname</label>
+            <input type="number" name="reg_number" value="{{worker.reg_number}}">
+            <label>Reg. Number</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" name="patronym">
-            <label>Patronymic</label>
+            <input type="tel" name="phone" value="{{worker.phone}}">
+            <label>Phone</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
     </div>
 
     <div class="inputs">
         <div class="input-field">
-            <input type="number" name="reg_number">
-            <label>Reg. Number</label>
-        </div>
-        <div class="input-field">
-            <input type="tel" name="phone">
-            <label>Phone</label>
-        </div>
-        <div class="input-field">
-            <input type="text" class="datepicker" name="birthday">
+            <input type="text" class="datepicker" name="birthday" value="{{worker.birthday}}">
             <label>Birthday</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
         <div class="input-field">
-            <input type="text" name="address">
+            <input type="text" name="address" value="{{worker.address}}">
             <label>Address</label>
+            <span class="helper-text" data-error="wrong" data-success="right"></span>
         </div>
     </div>
 
 
     <button type="submit" class="btn waves-effect waves-light">Update
-        <i class="material-icons right">publish</i>
+        <i class="material-icons right">update</i>
     </button>
 </form>

@@ -15,6 +15,7 @@ const aboutRouts = require("./routs/about");
 const aboutListRouts = require("./routs/aboutList");
 const userRouts = require("./routs/user");
 const registrationRouts = require("./routs/registration");
+const vacancyReplyRouts = require("./routs/vacancyReply");
 const path = require("path");
 
 const PORT = process.env.PORT || 3000;
@@ -22,7 +23,14 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const hbs = exphbs.create({
     defaultLayout: "main",
-    extname: "hbs"
+    extname: "hbs",
+    helpers: {
+        select:  function(selected, options) {
+            return options.fn(this).replace(
+                new RegExp(' value=\"' + selected + '\"'),
+                '$& selected="selected"');
+        }
+    }
 });
 app.get('/', (req, res) => res.render('dashboard.hbs', {
     layout: 'dashboard'
@@ -49,6 +57,7 @@ app.use('/about', aboutRouts);
 app.use('/aboutList', aboutListRouts);
 app.use ('/user', userRouts);
 app.use ('/registration', registrationRouts);
+app.use ('/vacancyReply', vacancyReplyRouts);
 
 async function start() {
     try {

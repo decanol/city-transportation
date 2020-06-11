@@ -74,7 +74,9 @@
                 <td>{{name}}</td>
                 <td>{{gender}}</td>
                 <td>{{address}}</td>
-                <td>{{phone}}</td>
+                <td>
+                    <a href="tel:+phone">{{phone}}</a>
+                    </td>
                 <td>{{birthday}}</td>
                 <td class="table_menu">
                     <a class='dropdown-trigger btn' href="#" data-target='dropdown{{_id}}'>
@@ -85,7 +87,7 @@
                             <a href="/workers/delete/{{_id}}" class="delete-btn">Delete</a>
                         </li>
                         <li>
-                            <a href="/edit-workers/{{_id}}">Edit</a>
+                            <a href="/workers/edit/{{_id}}">Edit</a>
                         </li>
                     </ul>
                 </td>

@@ -1,0 +1,40 @@
+<h3>Job Applications</h3>
+{{#if vacancyReply.length}}
+    <table class="highlight">
+        <thead class="thead-table">
+        <tr>
+            <th>Name Surname Patronymic</th>
+            <th>Gender</th>
+            <th>Address</th>
+            <th>Phone</th>
+<!--            <th>Birthday</th>-->
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each vacancyReply}}
+            <tr>
+                <td>{{name}}</td>
+                <td>{{gender}}</td>
+                <td>{{address}}</td>
+                <td>
+                    <a href="tel:+phone">{{phone}}</a>
+                </td>
+<!--                <td>{{birthday}}</td>-->
+                <td class="table_menu">
+                    <a class='dropdown-trigger btn' href="#" data-target='dropdown{{_id}}'>
+                        <i class="material-icons">menu</i>
+                    </a>
+                    <ul id='dropdown{{_id}}' class='dropdown-content'>
+                        <li>
+                            <a href="/workers/delete/{{_id}}" class="delete-btn">Delete</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {{/each}}
+        </tbody>
+    </table>
+{{else}}
+    <p>*table's empty</p>
+{{/if}}

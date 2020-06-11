@@ -8,6 +8,10 @@ body {
     width: 1066px;
 }
 
+nav ul li, nav ul li a {
+    height: 60px;
+}
+
 .logo {
     margin: 20px;
     height: 80px;
@@ -112,6 +116,16 @@ table .btn {
 
 .delete-btn:hover {
     color: red;
+}
+
+ul li .edit-btn i:hover {
+    color: #F2AA4CFF;
+}
+
+.btns {
+    width: 60px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .header-color, .datepicker-date-display, .card, .thead-table{
@@ -440,4 +454,12 @@ footer .contacts ul {
 
 .form-reg {
     height: 320px;
+}
+
+.modal-content {
+    margin: 0 36px;
+}
+
+.modal-footer {
+    margin: 0 20px 12px 0;
 }

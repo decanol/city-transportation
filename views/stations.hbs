@@ -18,8 +18,12 @@
 {{#if stations.length}}
     <ul class="collection">
         {{#each stations}}
-            <li class="collection-item">{{stations}}
-                <a href="/stations/delete/{{_id}}" class="delete-btn"><i class="material-icons delete-station">delete</i></a>
+            <li class="collection-item">
+                {{stations}}
+                <div class="btns">
+                    <a class="edit-btn"><i class="material-icons delete-station">edit</i></a>
+                    <a href="/stations/delete/{{_id}}" class="delete-btn"><i class="material-icons delete-station">delete</i></a>
+                </div>
             </li>
         {{/each}}
     </ul>
